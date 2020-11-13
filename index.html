@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Quizzes</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div id="question-frame">
+        <p id="question">Neko pitanje</p>
+        <p class="answer" id="answer1" onclick="nextQuestion(event,0)">odgovor 1</p>
+        <p class="answer" id="answer2" onclick="nextQuestion(event,1)">odgovor 2</p>
+        <p class="answer" id="answer3" onclick="nextQuestion(event,2)">odgovor 3</p>
+    </div>
+
+    <div class="button-frame" id="button-frame">
+        <button type="button" class="btn btn-secondary" id="new" onclick="newGame()" >Run again</button>
+        <button type="button" class="btn btn-secondary" id="help" onclick="help()">Help</button>
+        <button type="button" class="btn btn-secondary" id="next" onclick="next()">Skip the question</button>
+    </div>
+
+    <div class="alert alert-success " id="win-frame" role="alert">
+       <p>You win!</p>
+       <img src="assets/clap.svg" alt="clap" height="100px">
+        <button type="button" class="btn btn-success" onclick="newGame()">Run again</button>
+    </div>
+
+    <div class="alert alert-danger" id="game-over-frame" role="alert">
+        <p>Sorry you got the question wrong!</p> 
+        <p> 😞 </p>
+        <button type="button" class="btn btn-danger" onclick="newGame()">Run again</button>
+    </div>
+    <script src="quiz.js"></script>
+</body>
+
+</html>
